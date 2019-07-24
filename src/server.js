@@ -30,40 +30,6 @@ router.post('/auth', async ctx => {
   const userInfo = await fetch(`${fetch_user_url}?access_token=${access_token}`).then(res => res.json())
 
   ctx.body = userInfo
-  // const access_token_url = 'https://github.com/login/oauth/access_token'
-  // fetch(access_token_url, {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(params)
-  // })
-  //   .then(res => res.text())
-  //   .then(body => {
-  //     const decodeQuery = url => {
-  //       let params = {}
-  //       const paramsStr = url.replace(/(\S*)\?/, '') // a=1&b=2&c=&d=xxx&e
-  //       paramsStr.split('&').forEach(v => {
-  //         const d = v.split('=')
-  //         if (d[1] && d[0]) params[d[0]] = d[1]
-  //       })
-  //       return params
-  //     }
-  //     const { access_token } = decodeQuery(body)
-
-  //     return access_token
-  //   })
-  //   .then(async token => {
-  //     const userUrl = 'https://api.github.com/user'
-  //     const url = `${userUrl}?access_token=${token}`
-  //     await fetch(url)
-  //       .then(res => res.json())
-  //       .then(response => {
-  //         console.log(response) // getSometh
-  //       })
-  //   })
-
-  // ctx.body = code
 })
 
 app
